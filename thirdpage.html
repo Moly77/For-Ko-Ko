@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ff69b4;
+    }
+
+    .arrow {
+      font-size: 2em;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    #image {
+  display: none;
+  margin: 20px auto; 
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffb6c1;
+  display: block;
+}
+
+    .btn-group {
+      margin-top: 20px;
+      display: none;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ffc0cb;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #sadMessage {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Wanna open this?</h1>
+  <div class="arrow">⬇️⬇️⬇️</div>
+
+  <img id="image" src="letter.jpg" alt="Cute Surprise" />
+
+  <div class="btn-group" id="choices">
+    <button onclick="goNextPage()">Yes 💖</button>
+    <button onclick="showSad()">No 😢</button>
+  </div>
+
+  <div id="sadMessage">
+    <p>ww I am sad you didn't open it ww 😭<br>Please open it?</p>
+    <button onclick="goNextPage()">Open 💌</button>
+    <button onclick="repeatSad()">No 😭</button>
+  </div>
+
+  <script>
+ 
+window.onload = function () {
+  const img = document.getElementById("image");
+  img.style.display = "block";
+
+  const choices = document.getElementById("choices");
+  choices.style.display = "block";
+};
+
+    function goNextPage() {
+      window.location.href = "fourthpage.html"; 
+    }
+
+    function showSad() {
+      document.getElementById("choices").style.display = "none";
+      document.getElementById("sadMessage").style.display = "block";
+    }
+
+    function repeatSad() {
+      alert("ww I’m really really sad... 😢 Please open it?");
+    }
+  </script>
+</body>
+</html>

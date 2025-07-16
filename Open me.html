@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe4ec, #ffe9f3);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #5e2b4c;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(255, 192, 203, 0.5);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 40px;
+      color: #ff6fa0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      color: #7a3b63;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ffc6d9;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+     button {
+      display: inline-block;
+      background-color: #ff6fa0;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e4548a;
+    }
+  </style>
+</head>
+<body>
+	<h1>Hi,Ko KO💗</h1>
+	<p>Made with love by CNT's babe✨</p><br>
+<form method="post" id="love" action="secondpage.html">
+	<table>
+	<tr><td><input type="text" name="name" id="name" placeholder="Your sweet name>3"></td></tr>
+	<tr><td><input type="password" width="50" name="password" id="password" placeholder="love password" required="required"></td></tr>
+	<tr><td><button type="submit" value="submit">Next</button></td></tr>
+</table>
+</form>
+
+<script>
+    document.getElementById('love').addEventListener('submit', function(e) {
+      e.preventDefault(); // prevent default form submission
+      const passwordInput = document.getElementById('password').value;
+      const correctPassword = "1762025";
+
+      if (passwordInput === correctPassword) {
+     
+        window.location.href = "secondpage.html";
+      } else {
+        document.getElementById('errorMessage').textContent = "Incorrect password 💔";
+      }
+    });
+  </script>
+
+</body>
+</html>
